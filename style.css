@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&family=Lexend+Deca:wght@100..900&display=swap');
+
+:root {
+    --accent-one: hsl(31, 77%, 52%);
+    --accent-two: hsl(184, 100%, 22%);
+    --accent-three: hsl(179, 100%, 13%);
+
+    --text: hsla(0, 0%, 100%, 0.75);
+    --basic: hsl(0, 0%, 95%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--basic);
+    color: var(--text);
+    font-size: 15px;
+    font-family: "Lexend Deca", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+img {
+    display: block;
+}
+
+.main {
+    height: 100vh;
+    height: 100svh;
+    padding: 48px 24px;
+    display: grid;
+    place-items: center;
+}
+
+.text,
+.title {
+    margin: 0;
+}
+
+.title {
+    color: var(--basic);
+    text-transform: uppercase;
+    font-family: "Big Shoulders Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.button {
+    display: inline-block;
+    padding: .9em 2em;
+    background-color: var(--basic);
+    color: var(--accent-one);
+    text-decoration: none;
+    border: 1px solid var(--basic);
+    border-radius: 50px;
+    transition: .3s ease-in-out;
+    transition-property: color, background-color;
+    cursor: pointer;
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.attribution {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    translate: -50% 0;
+    font-size: 11px;
+    text-align: center;
+    color: var(--accent-one);
+}
+
+.attribution a {
+    color: var(--accent-two);
+}
+
+.cards {
+    max-width: 920px;
+    display: grid;
+}
+
+.cards article {
+    padding: 49px;
+}
+
+.cards li:first-of-type article {
+    border-radius: 8px 8px 0 0;
+}
+.cards li:last-of-type article {
+    border-radius: 0 0 8px 8px;
+}
+
+.sedans {
+    background-color: var(--accent-one);
+}
+.suvs {
+    background-color: var(--accent-two);
+}
+.suvs .button {
+    color: var(--accent-two);
+}
+.lux {
+    background-color: var(--accent-three);
+}
+
+.lux .button {
+    color: var(--accent-three);
+}
+
+.cards .decor {
+    margin-bottom: 35px;
+}
+
+.cards .title {
+    margin-bottom: 28px;
+    font-size: 40px;
+}
+
+.cards .text {
+    margin-bottom: 26px;
+    line-height: 1.6;
+}
+
+@media (hover: hover) {
+    .button:is(:hover, :focus-visible) {
+        background-color: transparent;
+        color: var(--basic);
+    }
+}
+
+.button:active {
+    background-color: transparent;
+    color: var(--basic);
+}
+
+@media (min-width: 720px) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+        place-content: center;
+        align-items: stretch;
+        justify-items: stretch;
+    }
+
+    .cards article {
+        height: 100%;
+        display: grid;
+        justify-items: start;
+        grid-template-rows: repeat(3, auto) 1fr;
+    }
+
+    .cards li:first-of-type article {
+        border-radius: 8px 0 0 8px;
+    }
+    .cards li:last-of-type article {
+        border-radius: 0 8px 8px 0;
+    }
+
+    .cards .text {
+        margin-bottom: 84px;
+    }
+}
